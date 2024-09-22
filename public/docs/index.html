@@ -143,7 +143,7 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'email' =&gt; 'dave@dcblog.dev',
+            'email' =&gt; 'test@example.com',
             'password' =&gt; 'password',
         ],
     ]
@@ -163,7 +163,7 @@ const headers = {
 };
 
 let body = {
-    "email": "dave@dcblog.dev",
+    "email": "test@example.com",
     "password": "password"
 };
 
@@ -180,7 +180,7 @@ import json
 
 url = 'http://localhost/api/v1/login'
 payload = {
-    "email": "dave@dcblog.dev",
+    "email": "test@example.com",
     "password": "password"
 }
 headers = {
@@ -198,7 +198,7 @@ response.json()</code></pre></div>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"dave@dcblog.dev\",
+    \"email\": \"test@example.com\",
     \"password\": \"password\"
 }"
 </code></pre></div>
@@ -283,10 +283,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="dave@dcblog.dev"
+               value="test@example.com"
                data-component="body">
     <br>
-<p>email of the user Example: <code>dave@dcblog.dev</code></p>
+<p>email of the user Example: <code>test@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -494,7 +494,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/v1/reset-password/quos';
+$url = 'http://localhost/api/v1/reset-password/optio';
 $response = $client-&gt;post(
     $url,
     [
@@ -515,7 +515,7 @@ print_r(json_decode((string) $body));</code></pre></div>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/reset-password/quos"
+    "http://localhost/api/v1/reset-password/optio"
 );
 
 const headers = {
@@ -540,7 +540,7 @@ fetch(url, {
     <pre><code class="language-python">import requests
 import json
 
-url = 'http://localhost/api/v1/reset-password/quos'
+url = 'http://localhost/api/v1/reset-password/optio'
 payload = {
     "email": null,
     "password": null,
@@ -557,7 +557,7 @@ response.json()</code></pre></div>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/reset-password/quos" \
+    "http://localhost/api/v1/reset-password/optio" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -647,10 +647,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-v1-reset-password--token-"
-               value="quos"
+               value="optio"
                data-component="url">
     <br>
-<p>Example: <code>quos</code></p>
+<p>Example: <code>optio</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">

@@ -34,7 +34,7 @@ endpoints:
         name: email
         description: 'email of the user'
         required: true
-        example: dave@dcblog.dev
+        example: test@example.com
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -49,7 +49,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      email: dave@dcblog.dev
+      email: test@example.com
       password: password
     fileParameters: []
     responses: []
@@ -130,13 +130,13 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: quos
+        example: optio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      token: quos
+      token: optio
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:

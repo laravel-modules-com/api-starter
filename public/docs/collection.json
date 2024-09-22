@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "24297652-db25-4b8c-9f86-0919ee3a9b0c",
+        "_postman_id": "aa9587ec-84fe-452b-aed1-372afd1bc0f3",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"dave@dcblog.dev\",\"password\":\"password\"}"
+                            "raw": "{\"email\":\"test@example.com\",\"password\":\"password\"}"
                         },
                         "description": "Login should receive the following fields inside the body request",
                         "auth": {
@@ -93,7 +93,7 @@
                                 {
                                     "id": "token",
                                     "key": "token",
-                                    "value": "quos",
+                                    "value": "optio",
                                     "description": ""
                                 }
                             ]

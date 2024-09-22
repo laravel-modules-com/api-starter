@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
+use Illuminate\Support\Facades\Http;
+use Tests\TestCase;
 
 describe('Architectural Tests', function () {
 
@@ -24,4 +27,10 @@ describe('Architectural Tests', function () {
         ->classes->not->toBeFinal()
         ->classes->not->toExtend(Controller::class)
         ->toImplementNothing();
+
+    pest()->extend(TestCase::class)
+        ->use(LazilyRefreshDatabase::class)
+        ->beforeEach(function () {
+            Http::preventStrayRequests();
+        });
 });

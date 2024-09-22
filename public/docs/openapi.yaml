@@ -26,7 +26,7 @@ paths:
                 email:
                   type: string
                   description: 'email of the user'
-                  example: dave@dcblog.dev
+                  example: test@example.com
                 password:
                   type: string
                   description: 'the password of the user'
@@ -101,7 +101,7 @@ paths:
         in: path
         name: token
         description: ''
-        example: quos
+        example: optio
         required: true
         schema:
           type: string
