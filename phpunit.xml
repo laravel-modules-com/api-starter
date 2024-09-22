@@ -14,10 +14,17 @@
   </testsuites>
   <source>
     <include>
-      <directory>./app</directory>
-      <directory>./Modules/App/src</directory>
+        <directory suffix=".php">./app</directory>
+        <directory suffix=".php">./Modules</directory>
     </include>
-  </source>
+    <exclude>
+        <directory suffix=".php">./Modules/*/config</directory>
+        <directory suffix=".php">./Modules/*/database</directory>
+        <directory suffix=".php">./Modules/*/resources</directory>
+        <directory suffix=".php">./Modules/*/routes</directory>
+        <directory suffix=".php">./Modules/*/tests</directory>
+    </exclude>
+</source>
   <php>
     <env name="APP_ENV" value="testing"/>
     <env name="APP_MAINTENANCE_DRIVER" value="file"/>
