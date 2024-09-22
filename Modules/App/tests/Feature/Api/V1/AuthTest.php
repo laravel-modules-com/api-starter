@@ -42,6 +42,10 @@ test('can login with valid details', function () {
 });
 
 test('can logout', function () {
+
+    /**
+     * @var TestCase $this
+     */
     $this->authenticate();
 
     json('post', route('api.v1.logout'))

@@ -92,22 +92,31 @@ class AppServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->nameLower);
 
-        $componentNamespace = $this->module_namespace($this->name, $this->app_path(config('modules.paths.generator.component-class.path')));
+        $path = type(config('modules.paths.generator.component-class.path'))->asString();
+
+        $componentNamespace = $this->module_namespace($this->name, $this->app_path($path));
         Blade::componentNamespace($componentNamespace, $this->nameLower);
     }
 
     /**
      * Get the services provided by the provider.
+     *
+     * @return array<string>
      */
     public function provides(): array
     {
         return [];
     }
 
+    /**
+     * Get the paths that should be published.
+     *
+     * @return array<string>
+     */
     private function getPublishableViewPaths(): array
     {
         $paths = [];
-        foreach (config('view.paths') as $path) {
+        foreach (type(config('view.paths'))->asIterable() as $path) {
             if (is_dir($path.'/modules/'.$this->nameLower)) {
                 $paths[] = $path.'/modules/'.$this->nameLower;
             }

@@ -27,9 +27,9 @@ class UsersResource extends JsonResource
             'attributes' => [
                 'name' => $this->resource->name,
                 'email' => $this->resource->email,
-                'last_logged_in_at' => $this->resource->last_logged_in_at->format('Y-m-d H:i:s'),
-                'created_at' => $this->resource->created_at->format('Y-m-d H:i:s'),
-                'updated_at' => $this->resource->updated_at->format('Y-m-d H:i:s'),
+                'last_logged_in_at' => $this->resource->last_logged_in_at,
+                'created_at' => $this->resource->created_at,
+                'updated_at' => $this->resource->updated_at,
             ],
             'links' => [
                 'self' => 'none', //route('api.v1.users.show', $this->id),

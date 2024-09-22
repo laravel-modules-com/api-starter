@@ -48,7 +48,7 @@
     },
     "scripts": {
         "pint": "./vendor/bin/sail pint",
-        "stan": "phpstan analyse",
+        "stan": "php -d memory_limit=2G vendor/bin/phpstan analyse",
         "pest": "vendor/bin/sail pest",
         "type-coverage": "vendor/bin/sail test --type-coverage",
         "coverage": "vendor/bin/sail test --coverage",
