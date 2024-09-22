@@ -3,9 +3,12 @@
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use Modules\App\Mail\Auth\SendResetPasswordMail;
+use Tests\TestCase;
 
 use function Pest\Laravel\json;
 use function Pest\Laravel\post;
+
+uses(TestCase::class);
 
 test('cannot login with invalid details', function () {
     post(route('api.v1.login'), [])->assertSessionHasErrors();

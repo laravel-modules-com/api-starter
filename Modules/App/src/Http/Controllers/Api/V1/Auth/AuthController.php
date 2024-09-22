@@ -31,7 +31,7 @@ class AuthController
      *
      * Login should receive the following fields inside the body request
      *
-     * @bodyParam email string required email of the user Example: dave@dcblog.dev
+     * @bodyParam email string required email of the user Example: test@example.com
      * @bodyParam password string required the password of the user Example: password
      *
      * @unauthenticated
