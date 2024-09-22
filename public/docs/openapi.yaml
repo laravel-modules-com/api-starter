@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Login should receive the following fields inside the body request'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'email of the user'
+                  example: dave@dcblog.dev
+                password:
+                  type: string
+                  description: 'the password of the user'
+                  example: password
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/forgot-password:
+    post:
+      summary: 'Forgot Password'
+      operationId: forgotPassword
+      description: 'Generate and sent a reset password email.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'email of the user.'
+                  example: null
+                url:
+                  type: string
+                  description: 'the url where the reset button will link to. A token will be appended to the end of the url.'
+                  example: null
+              required:
+                - email
+                - url
+      security: []
+  '/api/v1/reset-password/{token}':
+    post:
+      summary: 'Reset Password'
+      operationId: resetPassword
+      description: 'Update a users password by sending new passwords and token.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'email of the user.'
+                  example: null
+                password:
+                  type: string
+                  description: 'the password.'
+                  example: null
+                password_confirmation:
+                  type: string
+                  description: 'the password confirmation.'
+                  example: null
+              required:
+                - email
+                - password
+                - password_confirmation
+      security: []
+    parameters:
+      -
+        in: path
+        name: token
+        description: ''
+        example: quos
+        required: true
+        schema:
+          type: string
+  /api/v1/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: 'calling logout will destroy the token and remove the user session.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+tags:
+  -
+    name: Authentication
+    description: "\nAPIs for authenticating requests.\n\nTokens are used to authenticate requests."
